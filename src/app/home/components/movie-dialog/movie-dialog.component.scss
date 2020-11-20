@@ -5,11 +5,11 @@
   position: relative;
 
   &__title {
-    color: var(--h3-color);
+    color: var(--h2-color);
 
     span {
       display: block;
-      @include head-variant('h3')
+      @include head-variant('h2')
     }
   }
 

@@ -3,10 +3,10 @@
 @mixin head-variant($type) {
   text-transform: capitalize;
 
-  @if $type == 'h3' {
-    font-size: $h3-font-size;
-    font-family: $h3-font-family;
-    padding: $h3-spaces;
+  @if $type == 'h2' {
+    font-size: $h2-font-size;
+    font-family: $h2-font-family;
+    padding: $h2-spaces;
 
   } @else if $type == 'h1' {
     color: var(--h1-color);

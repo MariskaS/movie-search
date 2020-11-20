@@ -35,14 +35,14 @@
     }
 
     &__title {
-      color: var(--h3-color);
+      color: var(--h2-color);
 
       span {
         display: block;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        @include head-variant('h3')
+        @include head-variant('h2')
       }
     }
 

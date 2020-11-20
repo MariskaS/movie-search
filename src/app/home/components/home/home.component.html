@@ -1,5 +1,5 @@
 <section class="ms-section">
-  <h1 class="ms-section__title">{{title}}</h1>
+  <h2 class="ms-section__title">{{title}}</h2>
   <app-movie-list *ngIf="movies$; else noData"
                   [movies]="movies$ | async"></app-movie-list>
 </section>

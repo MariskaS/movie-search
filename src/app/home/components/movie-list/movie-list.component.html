@@ -1,8 +1,8 @@
 <mat-spinner *ngIf="loading"></mat-spinner>
-<div class="ms-movie-list"
-     role="list">
+<div class="ms-movie-list">
   <app-card class="ms-movie-card"
             *ngFor="let movie of movies"
+            (keyup.enter)="openDialog(movie.id)"
             (click)="openDialog(movie.id)">
     <ng-container card-head>
       <h3 class="ms-movie-card__title"
