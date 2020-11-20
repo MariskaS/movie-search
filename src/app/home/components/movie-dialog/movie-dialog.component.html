@@ -1,17 +1,18 @@
 <div class="ms-dialog">
-  <img [src]="data.imgUrl"
-       alt="Photo of a movie"
-       style="width: 300px">
-  <button mat-icon-button
-          class="ms-dialog__close"
+  <div mat-dialog-title class="ms-dialog__img"
+       [attr.style]="'background-image: url(' + data.imgUrl +')'">
+  </div>
+  <button class="ms-dialog__close"
           aria-label="Close Dialog"
           (click)="handleClick()">
-    <mat-icon>close</mat-icon>
+    <mat-icon aria-hidden="true"
+              svgIcon="close"></mat-icon>
   </button>
   <div mat-dialog-content>
-    <h3 class="ms-h3">{{data.title}}</h3>
-    <span class="ms-txt-color--primary">{{data.year}}</span>
-
+    <h3 class="ms-dialog__title">
+      <span>{{data.title}}</span>
+      <small>{{data.year}}</small>
+    </h3>
     <div class="ms-movie-list">
       <ul class="ms-movie-list__col">
         <li class="ms-movie-list__item">
@@ -60,5 +61,4 @@
       </ul>
     </div>
   </div>
-
 </div>

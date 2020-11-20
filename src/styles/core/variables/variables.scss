@@ -1,4 +1,9 @@
 /*
+* Angular Material.
+*/
+$mat-dialog-space: 24px;
+
+/*
 * Font.
 */
 $font-family-extra-bold: 'Proxima Extra Bold', Arial, sans-serif;
@@ -26,13 +31,11 @@ $body-font-family: $font-family-regular;
 */
 $screen-sx: 600px;
 $screen-md: 780px;
-$screen-lg: 1200px;
 
 /*
 * Spaces.
 */
 $space-base: 20px;
-$space-base-double: $space-base*2;
 $space-base-half: $space-base/2;
 
 /*
@@ -84,15 +87,26 @@ $shadow-base: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 3px 0 rgba(0, 0, 0, .12), 
 */
 $transition-base: .3s ease-in-out;
 
-
 /*
 * Card.
 */
 $card-spaces: $space-base;
 $card-radius: $border-radius-base;
 $card-head-spaces: $space-base $space-base $space-base-half;
+$card-head-font-family: $font-family-extra-bold;
 $card-body-spaces: $space-base;
 
-$card-head-font-family: $font-family-extra-bold;
+/*
+* Dialog.
+*/
+$dialog-img-height: 240px;
+$dialog-img-spaces: (-$mat-dialog-space) (-$mat-dialog-space) $mat-dialog-space;
 
+/*
+* Buttons.
+*/
+// Button - Icon.
+$btn-icon-bg: transparent;
+$btn-icon-border: 0;
+$btn-icon-size: 60px;
 

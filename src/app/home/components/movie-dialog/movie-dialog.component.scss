@@ -1,24 +1,60 @@
-@import "~src/styles/typography/h3";
-@import "~src/styles/typography/txt-color";
+@import "~src/styles/core/mixins/mixin-head-variant";
+@import "~src/styles/core/mixins/mixin-btn-variant";
+
+.ms-dialog {
+  position: relative;
+
+  &__title {
+    color: var(--h3-color);
+
+    span {
+      display: block;
+      @include head-variant('h3')
+    }
+  }
+
+  &__img {
+    background-color: var(--dialog-img-bg);
+    margin: $dialog-img-spaces;
+    min-height: $dialog-img-height;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: -$mat-dialog-space;
+
+    @include btn-variant(
+        $btn-icon-bg,
+        $btn-icon-border,
+        $btn-icon-size,
+        $btn-icon-size
+    )
+  }
+}
 
 .ms-movie-list {
-  display: flex;
-  flex-wrap: wrap;
+  padding-top: $space-base-half;
 
-  &__col {
-    flex: 1;
-    padding: $space-base;
+  // For Desktop & Tablet.
+  @media (min-width: $screen-sx) {
+    display: flex;
+
+    &__col {
+      flex: 1;
+    }
   }
 
   &__item {
     display: flex;
-
-    &:not(:last-child) {
-     padding-bottom: $space-base;
-    }
+    padding: $space-base-half 0;
   }
 
   &__label {
     padding-right: $space-base-half;
+    text-transform: capitalize;
   }
 }

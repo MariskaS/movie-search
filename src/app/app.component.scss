@@ -1,5 +1,4 @@
 @import "~src/styles/core/variables/variables";
-@import "~src/styles/layout/main";
 
 :host {
   display: flex;
@@ -8,6 +7,9 @@
   overflow: hidden;
 }
 
+/**
+* Sidenav.
+*/
 .ms-sidenav {
   background-color: var(--sidenav-bg);
   color: var(--sidenav-color);
@@ -20,3 +22,17 @@
     width: $sidenav-width;
   }
 }
+
+/**
+* Main.
+*/
+.ms-main {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+
+  &__content {
+    flex: 1;
+  }
+}
+

@@ -1,5 +1,6 @@
 :root {
   --color-white: #fff;
+  --color-gray: #f5f5f5;
   --color-primary: #009bc3;
   --color-primary-dark: #06496b;
 
@@ -32,9 +33,15 @@
   * Card.
   */
   --card-head-color: var(--color-primary-dark);
+  --card-body-bg: var(--color-gray);
 
   /*
   * Custom Focus.
   */
   --focus-box: var(--color-primary-dark);
+
+  /*
+  * Dialog.
+  */
+  --dialog-img-bg: var(--color-gray);
 }

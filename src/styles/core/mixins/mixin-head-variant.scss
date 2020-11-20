@@ -1,0 +1,17 @@
+@import "~src/styles/core/variables/variables";
+
+@mixin head-variant($type) {
+  text-transform: capitalize;
+
+  @if $type == 'h3' {
+    font-size: $h3-font-size;
+    font-family: $h3-font-family;
+    padding: $h3-spaces;
+
+  } @else if $type == 'h1' {
+    color: var(--h1-color);
+    font-size: $h1-font-size;
+    font-family: $h1-font-family;
+    padding: $h1-spaces;
+  }
+}

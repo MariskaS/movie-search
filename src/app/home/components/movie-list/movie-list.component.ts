@@ -31,6 +31,7 @@ export class MovieListComponent implements OnInit {
     this.movieService.getMovieById(id).subscribe((item) => {
       this.loading = false;
       this.dialog.open(MovieDialogComponent, {
+        maxWidth: '840px',
         data: item
       });
     });

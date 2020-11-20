@@ -3,8 +3,12 @@
           class="ms-header__btn"
           aria-label="Toggle left sidebar"
           (click)="handleClick()">
-    <mat-icon *ngIf="!toggleIcon">menu</mat-icon>
-    <mat-icon *ngIf="toggleIcon">close</mat-icon>
+    <mat-icon class="ms-header__icon"
+              *ngIf="!toggleIcon"
+              aria-hidden="true" svgIcon="menu"></mat-icon>
+    <mat-icon class="ms-header__icon"
+              *ngIf="toggleIcon"
+              aria-hidden="true" svgIcon="close"></mat-icon>
   </button>
   <a href="/"
      class="ms-header__logo"
