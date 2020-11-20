@@ -1,0 +1,9 @@
+.ms-main {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+
+  &__content {
+    flex: 1;
+  }
+}

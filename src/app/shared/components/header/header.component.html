@@ -1,0 +1,12 @@
+<header class="ms-header">
+  <button mat-icon-button
+          class="ms-header__btn"
+          aria-label="Toggle left sidebar"
+          (click)="handleClick()">
+    <mat-icon *ngIf="!toggleIcon">menu</mat-icon>
+    <mat-icon *ngIf="toggleIcon">close</mat-icon>
+  </button>
+  <a href="/"
+     class="ms-header__logo"
+     aria-labelledby="Go to home page">{{projectName}}</a>
+</header>

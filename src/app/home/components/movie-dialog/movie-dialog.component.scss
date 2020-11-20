@@ -1,0 +1,24 @@
+@import "~src/styles/typography/h3";
+@import "~src/styles/typography/txt-color";
+
+.ms-movie-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__col {
+    flex: 1;
+    padding: $space-base;
+  }
+
+  &__item {
+    display: flex;
+
+    &:not(:last-child) {
+     padding-bottom: $space-base;
+    }
+  }
+
+  &__label {
+    padding-right: $space-base-half;
+  }
+}

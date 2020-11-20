@@ -1,0 +1,98 @@
+/*
+* Font.
+*/
+$font-family-extra-bold: 'Proxima Extra Bold', Arial, sans-serif;
+$font-family-bold: 'Proxima Bold', Arial, sans-serif;
+$font-family-regular: 'Proxima Reg', Arial, sans-serif;
+
+$font-size-lg: 40px;
+$font-size-md: 30px;
+$font-size-sm: 20px;
+$font-size-base: 16px;
+
+/*
+* Scrollbar.
+*/
+$scrollbar-size: 8px;
+
+/*
+* Body.
+*/
+$body-font-size: $font-size-base;
+$body-font-family: $font-family-regular;
+
+/*
+* Screens.
+*/
+$screen-sx: 600px;
+$screen-md: 780px;
+$screen-lg: 1200px;
+
+/*
+* Spaces.
+*/
+$space-base: 20px;
+$space-base-double: $space-base*2;
+$space-base-half: $space-base/2;
+
+/*
+* Header.
+*/
+$header-height: 60px;
+$header-spaces: $space-base-half $space-base;
+
+$header-logo-font-size: $font-size-sm;
+$header-logo-spaces: $space-base-half;
+
+/*
+* SideNav.
+*/
+$sidenav-width: 240px;
+$sidenav-spaces: $space-base 0;
+
+$sidenav-item-height: 40px;
+$sidenav-item-spaces: 0 $space-base;
+
+/*
+* Headings.
+*/
+$h1-font-size: $font-size-lg;
+$h1-font-family: $font-family-extra-bold;
+$h1-spaces: $space-base-half 0 $space-base;
+
+$h3-font-size: $font-size-md;
+$h3-font-family: $font-family-extra-bold;
+$h3-spaces: 0;
+
+/*
+* Section.
+*/
+$section-spaces: $space-base;
+
+/*
+* Border Radius.
+*/
+$border-radius-base: 2px;
+
+/*
+* Shadow.
+*/
+$shadow-base: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 1px 0 rgba(0, 0, 0, .14);
+
+/*
+* Transition.
+*/
+$transition-base: .3s ease-in-out;
+
+
+/*
+* Card.
+*/
+$card-spaces: $space-base;
+$card-radius: $border-radius-base;
+$card-head-spaces: $space-base $space-base $space-base-half;
+$card-body-spaces: $space-base;
+
+$card-head-font-family: $font-family-extra-bold;
+
+

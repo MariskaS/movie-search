@@ -1,0 +1,16 @@
+<app-header></app-header>
+<main class="ms-main">
+  <mat-drawer-container class="ms-main__content">
+    <mat-drawer
+      class="ms-sidenav"
+      mode="side"
+      [opened]="showSideNav$ | async">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</main>
+
+

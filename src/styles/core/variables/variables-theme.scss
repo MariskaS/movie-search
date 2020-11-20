@@ -1,0 +1,40 @@
+:root {
+  --color-white: #fff;
+  --color-primary: #009bc3;
+  --color-primary-dark: #06496b;
+
+  /*
+  * Scrollbar.
+  */
+  --scrollbar-bg: var(--color-primary);
+
+  /*
+  * Header.
+  */
+  --header-bg: var(--color-primary);
+  --header-color: var(--color-white);
+
+  /*
+  * SideNav.
+  */
+  --sidenav-bg: var(--color-primary-dark);
+  --sidenav-color: var(--color-white);
+
+  --sidenav-item-bg--action: var(--color-primary);
+
+  /*
+  * Headings.
+  */
+  --h1-color: var(--color-primary-dark);
+  --h3-color: var(--color-primary-dark);
+
+  /*
+  * Card.
+  */
+  --card-head-color: var(--color-primary-dark);
+
+  /*
+  * Custom Focus.
+  */
+  --focus-box: var(--color-primary-dark);
+}

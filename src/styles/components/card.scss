@@ -1,0 +1,24 @@
+@import "~src/styles/core/variables/variables";
+@import "~src/styles/core/mixins/mixin-focus-variant";
+
+.ms-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: box-shadow $transition-base;
+  box-shadow: $shadow-base;
+  border-radius: $card-radius;
+  overflow: hidden;
+  @include focus-variant;
+
+  &__head {
+    font-family: $card-head-font-family;
+    color: var(--card-head-color);
+    padding: $card-head-spaces;
+  }
+
+  &__body {
+    flex: 1;
+    padding: $card-body-spaces;
+  }
+}

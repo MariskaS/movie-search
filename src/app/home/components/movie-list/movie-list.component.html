@@ -1,0 +1,18 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div class="ms-movie-list"
+     role="list">
+  <app-card class="ms-movie-card"
+            *ngFor="let movie of movies$ | async"
+            (click)="openDialog(movie.id)">
+    <ng-container card-head>
+      <h3 class="ms-h3">{{movie.title}}</h3>
+      <span>{{movie.year}}</span>
+    </ng-container>
+    <ng-container card-body>
+      <div class="ms-movie-card__img">
+        <img [src]="movie.imgUrl" alt="Photo of a movie">
+      </div>
+    </ng-container>
+  </app-card>
+</div>
+

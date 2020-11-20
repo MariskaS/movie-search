@@ -1,0 +1,23 @@
+@import "~src/styles/core/variables/variables";
+
+::-webkit-scrollbar {
+  width: $scrollbar-size;
+  height: $scrollbar-size;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  line-height: 1.1;
+  overflow: hidden;
+}

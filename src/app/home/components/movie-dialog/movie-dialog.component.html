@@ -1,0 +1,64 @@
+<div class="ms-dialog">
+  <img [src]="data.imgUrl"
+       alt="Photo of a movie"
+       style="width: 300px">
+  <button mat-icon-button
+          class="ms-dialog__close"
+          aria-label="Close Dialog"
+          (click)="handleClick()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div mat-dialog-content>
+    <h3 class="ms-h3">{{data.title}}</h3>
+    <span class="ms-txt-color--primary">{{data.year}}</span>
+
+    <div class="ms-movie-list">
+      <ul class="ms-movie-list__col">
+        <li class="ms-movie-list__item">
+          <label class="ms-movie-list__label">{{labelRated}}:</label>
+          <span>{{data.rated || noData}}</span>
+        </li>
+        <li class="ms-movie-list__item">
+          <label class="ms-movie-list__label">{{labelReleased}}:</label>
+          <span>{{data.released || noData}}</span>
+        </li>
+        <li class="ms-movie-list__item">
+          <label class="ms-movie-list__label">{{labelRuntime}}:</label>
+          <span>{{data.runtime || noData}}</span>
+        </li>
+        <li class="ms-movie-list__item">
+          <label class="ms-movie-list__label">{{labelGenre}}:</label>
+          <span>{{data.genre || noData}}</span>
+        </li>
+        <li class="ms-movie-list__item">
+          <label class="ms-movie-list__label">{{labelDirector}}:</label>
+          <span>{{data.director || noData}}</span>
+        </li>
+      </ul>
+
+      <ul class="ms-movie-list__col">
+        <li class="ms-movie-list__item">
+          <label class="ms-movie-list__label">{{labelWriter}}:</label>
+          <span>{{data.writer || noData}}</span>
+        </li>
+        <li class="ms-movie-list__item">
+          <label class="ms-movie-list__label">{{labelActors}}:</label>
+          <span>{{data.actors || noData}}</span>
+        </li>
+        <li class="ms-movie-list__item">
+          <label class="ms-movie-list__label">{{labelPlot}}:</label>
+          <span>{{data.plot || noData}}</span>
+        </li>
+        <li class="ms-movie-list__item">
+          <label class="ms-movie-list__label">{{labelLanguage}}:</label>
+          <span>{{data.language || noData}}</span>
+        </li>
+        <li class="ms-movie-list__item">
+          <label class="ms-movie-list__label">{{labelCountry}}:</label>
+          <span>{{data.country || noData}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

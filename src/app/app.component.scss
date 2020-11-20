@@ -1,0 +1,22 @@
+@import "~src/styles/core/variables/variables";
+@import "~src/styles/layout/main";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ms-sidenav {
+  background-color: var(--sidenav-bg);
+  color: var(--sidenav-color);
+  overflow-y: auto;
+  padding: $sidenav-spaces;
+  width: 100%;
+
+  // For Desktop & Tablet.
+  @media (min-width: $screen-sx) {
+    width: $sidenav-width;
+  }
+}

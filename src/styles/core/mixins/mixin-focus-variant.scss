@@ -1,0 +1,6 @@
+@mixin focus-variant {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--focus-box);
+  }
+}
