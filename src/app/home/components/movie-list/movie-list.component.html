@@ -2,7 +2,7 @@
 <div class="ms-movie-list"
      role="list">
   <app-card class="ms-movie-card"
-            *ngFor="let movie of movies$ | async"
+            *ngFor="let movie of movies"
             (click)="openDialog(movie.id)">
     <ng-container card-head>
       <h3 class="ms-movie-card__title"

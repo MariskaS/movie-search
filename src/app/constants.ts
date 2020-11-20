@@ -16,3 +16,6 @@ export const MOVIE_DIALOG_LABEL_ACTORS = 'actors';
 export const MOVIE_DIALOG_LABEL_PLOT = 'plot';
 export const MOVIE_DIALOG_LABEL_LANGUAGE = 'language';
 export const MOVIE_DIALOG_LABEL_COUNTRY = 'country';
+
+export const MOVIE_DIALOG_NO_DATA = 'N/A';
+export const MOVIE_LIST_NO_DATA = 'There is nothing here yet...';

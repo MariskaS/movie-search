@@ -6,7 +6,7 @@ import {
   MOVIE_DIALOG_LABEL_GENRE, MOVIE_DIALOG_LABEL_LANGUAGE, MOVIE_DIALOG_LABEL_PLOT,
   MOVIE_DIALOG_LABEL_RATED,
   MOVIE_DIALOG_LABEL_RELEASED,
-  MOVIE_DIALOG_LABEL_RUNTIME, MOVIE_DIALOG_LABEL_WRITER
+  MOVIE_DIALOG_LABEL_RUNTIME, MOVIE_DIALOG_LABEL_WRITER, MOVIE_DIALOG_NO_DATA
 } from '../../../constants';
 import {MovieDetail} from '../../../interfaces';
 import {MatIconRegistry} from '@angular/material/icon';
@@ -28,7 +28,7 @@ export class MovieDialogComponent {
   labelPlot = MOVIE_DIALOG_LABEL_PLOT;
   labelLanguage = MOVIE_DIALOG_LABEL_LANGUAGE;
   labelCountry = MOVIE_DIALOG_LABEL_COUNTRY;
-  noData = 'N/A';
+  noData = MOVIE_DIALOG_NO_DATA;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: MovieDetail,
               private dialogRef: MatDialogRef<MovieDetail>,

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {MovieDetail, MovieListItem} from '../../../interfaces';
 import {movieItem} from '../../../mockData';
@@ -14,15 +14,14 @@ import {Observable} from 'rxjs';
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
+  @Input() movies: MovieListItem[];
   loading = false;
-  movies$: Observable<MovieListItem[]>;
 
   constructor(public dialog: MatDialog,
               private movieService: MovieService) {
   }
 
   ngOnInit(): void {
-    this.movies$ = this.movieService.getCoachMovieList();
   }
 
   openDialog(id: string): void {
