@@ -1,9 +1,10 @@
 <app-header></app-header>
 <main class="ms-main">
-  <mat-drawer-container class="ms-main__content">
+  <mat-drawer-container class="ms-main__content"
+                        hasBackdrop="false">
     <mat-drawer
       class="ms-sidenav"
-      mode="side"
+      [mode]="sideNavMode"
       [opened]="showSideNav$ | async">
       <app-sidenav></app-sidenav>
     </mat-drawer>

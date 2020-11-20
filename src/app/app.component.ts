@@ -14,6 +14,7 @@ import {WINDOW} from './shared/services/window.service';
 export class AppComponent implements OnInit {
   showSideNav$: Observable<boolean>;
   previousWidth: number;
+  sideNavMode = 'side';
 
   constructor(private store: Store<fromRoot.State>,
               @Inject(WINDOW) private window: Window) {
@@ -34,11 +35,13 @@ export class AppComponent implements OnInit {
     const width = this.window.innerWidth;
 
     if (this.previousWidth >= 600 && width < 600) {
+      this.sideNavMode = 'push';
       this.previousWidth = width;
       this.store.dispatch(CloseSideNav());
     }
 
     if (this.previousWidth < 600 && width >= 600) {
+      this.sideNavMode = 'side';
       this.previousWidth = width;
       this.store.dispatch(OpenSideNav());
     }
