@@ -1,11 +1,11 @@
 export interface SideNavigationItem {
-  id: string;
+  id: string | number;
   url: string;
   name: string;
 }
 
 export interface MovieDetail {
-  id: string;
+  id: string | number;
   title: string;
   year: any;
   imgUrl: string;
@@ -22,7 +22,7 @@ export interface MovieDetail {
 }
 
 export interface MovieListItem {
-  id: string;
+  id: string | number;
   title: string;
   year: any;
   imgUrl: string;
