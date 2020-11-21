@@ -11,6 +11,7 @@ import {StoreModule} from '@ngrx/store';
 import * as fromState from './data-flow';
 import {EffectsModule} from '@ngrx/effects';
 import {MovieEffects} from './data-flow/effects/movie.effects';
+import {A11yModule} from '@angular/cdk/a11y';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MovieEffects} from './data-flow/effects/movie.effects';
     HomeRoutingModule,
     ComponentsModule,
     MaterialModule,
+    A11yModule,
     EffectsModule.forFeature([MovieEffects]),
     StoreModule.forFeature(
       fromState.stateFeatureKey,
