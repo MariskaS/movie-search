@@ -8,7 +8,9 @@ import {ComponentsModule} from '../shared/components.module';
 import {MovieDialogComponent} from './components/movie-dialog/movie-dialog.component';
 import {MaterialModule} from '../shared/material.module';
 import {StoreModule} from '@ngrx/store';
-import * as fromState from './reducers';
+import * as fromState from './data-flow';
+import {EffectsModule} from '@ngrx/effects';
+import {MovieEffects} from './data-flow/effects/movie.effects';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import * as fromState from './reducers';
     HomeRoutingModule,
     ComponentsModule,
     MaterialModule,
+    EffectsModule.forFeature([MovieEffects]),
     StoreModule.forFeature(
       fromState.stateFeatureKey,
       fromState.reducers,

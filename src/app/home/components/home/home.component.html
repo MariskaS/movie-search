@@ -1,6 +1,11 @@
 <section class="ms-section">
   <h2 class="ms-section__title">{{title}}</h2>
-  <app-movie-list *ngIf="movies$; else noData"
+  <mat-spinner color="accent"
+               diameter="40"
+               strokeWidth="2"
+               *ngIf="loading$ | async"></mat-spinner>
+  <app-movie-list *ngIf="movies$ | async; else noData"
+                  (clickCard)="clickCard($event)"
                   [movies]="movies$ | async"></app-movie-list>
 </section>
 

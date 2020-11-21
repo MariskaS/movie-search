@@ -12,6 +12,7 @@ import {reducers, metaReducers} from './data-flow';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {HttpClientModule} from '@angular/common/http';
+import {EffectsModule} from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {HttpClientModule} from '@angular/common/http';
     StoreModule.forRoot(reducers, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    HttpClientModule
+    HttpClientModule,
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
