@@ -1,15 +1,15 @@
 import {createSelector} from '@ngrx/store';
 import {selectDetailError, selectDetailLoading} from './movie-detail.selector';
-import {selectError, selectLoading} from './movie.selector';
+import {selectMovieListError, selectMovieListLoading} from './movie.selector';
 
 export const selectLoadingState = createSelector(
   selectDetailLoading,
-  selectLoading,
+  selectMovieListLoading,
   (movieDetailLoading, movieListLoading) => movieDetailLoading || movieListLoading
 );
 
 export const selectErrorStatus = createSelector(
   selectDetailError,
-  selectError,
+  selectMovieListError,
   (movieDetailError, movieListError) => !!(movieDetailError || movieListError)
 );

@@ -20,7 +20,7 @@ const initialState: State = {
   loading: false
 };
 
-const movieReducer = createReducer(
+const movieDetailReducer = createReducer(
   initialState,
   on(LoadMovieDetail, (state) => ({
     ...state,
@@ -41,5 +41,5 @@ const movieReducer = createReducer(
 );
 
 export function reducer(state: State, action: Action): any {
-  return movieReducer(state, action);
+  return movieDetailReducer(state, action);
 }

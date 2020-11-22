@@ -68,12 +68,21 @@ describe('AppComponent', () => {
       );
     });
 
-    it('should close side navigation when window resized', () => {
+    it('should close side navigation when window resized from large to small', () => {
       app.previousWidth = 700;
       app.window.innerWidth = 500;
       app.handleResize();
       expect(mockDispatch).toHaveBeenCalledWith(
         jasmine.objectContaining({type: CloseSideNav.type})
+      );
+    });
+
+    it('should open side navigation when window resized from small to large', () => {
+      app.previousWidth = 500;
+      app.window.innerWidth = 700;
+      app.handleResize();
+      expect(mockDispatch).toHaveBeenCalledWith(
+        jasmine.objectContaining({type: OpenSideNav.type})
       );
     });
   });
