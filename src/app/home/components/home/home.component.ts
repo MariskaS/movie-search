@@ -6,7 +6,7 @@ import {ERROR_MESSAGE, MOVIE, MOVIE_LIST_NO_DATA} from '../../../constants';
 import {select, Store} from '@ngrx/store';
 import * as fromRoot from '../../data-flow';
 import {LoadMovieDetail, LoadMovieList} from '../../data-flow/actions/movie.actions';
-import {selectList} from '../../data-flow/selectors/movie.selector';
+import {selectMovieList} from '../../data-flow/selectors/movie.selector';
 import {selectErrorStatus, selectLoadingState} from '../../data-flow/selectors/home-page.selector';
 import {selectDetail} from '../../data-flow/selectors/movie-detail.selector';
 import {filter, takeUntil} from 'rxjs/operators';
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.store.dispatch(LoadMovieList());
 
-    this.movies$ = this.store.pipe(select(selectList));
+    this.movies$ = this.store.pipe(select(selectMovieList));
     this.initLoading();
 
     this.initMovieDetail();
