@@ -11,8 +11,7 @@ export class MovieListComponent {
   @Input() movies: MovieListItem[];
   @Output() clickCard = new EventEmitter<string>();
 
-  openDialog(id: string): void {
+  handleClick(id: string): void {
     this.clickCard.emit(id);
   }
-
 }

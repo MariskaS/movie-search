@@ -6,7 +6,7 @@ import {Injectable} from '@angular/core';
 export class SpinnerService {
   get showSpinner(): boolean {
     return this.counter > 0;
-  };
+  }
 
   private counter = 0;
 

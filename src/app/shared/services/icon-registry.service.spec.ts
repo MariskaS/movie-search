@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { WindowService } from './window.service';
+import { IconRegistryService } from './icon-registry.service';
 
-describe('WindowService', () => {
-  let service: WindowService;
+describe('IconRegistryService', () => {
+  let service: IconRegistryService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(WindowService);
+    service = TestBed.inject(IconRegistryService);
   });
 
   it('should be created', () => {

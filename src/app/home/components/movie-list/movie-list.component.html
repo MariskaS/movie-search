@@ -1,8 +1,8 @@
 <div class="ms-movie-list">
   <app-card class="ms-movie-card"
             *ngFor="let movie of movies"
-            (keyup.enter)="openDialog(movie.id)"
-            (click)="openDialog(movie.id)">
+            (keyup.enter)="handleClick(movie.id)"
+            (click)="handleClick(movie.id)">
     <ng-container card-head>
       <h3 class="ms-movie-card__title"
           [matTooltip]="movie.title">
