@@ -32,11 +32,12 @@
 }
 
 .ms-movie-list {
-  padding: $space-base-half 0 0 $space-base;
+  padding: $space-base-half 0 0;
 
   // For Desktop & Tablet.
   @media (min-width: $screen-sx) {
     display: flex;
+    padding-left: $space-base;
 
     &__col {
       flex: 1;

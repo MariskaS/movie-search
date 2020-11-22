@@ -1,18 +1,19 @@
+<app-spinner [class.is-sidenav]="showSideNav$ | async"></app-spinner>
 <app-header></app-header>
 <main class="ms-main">
-  <mat-drawer-container class="ms-main__content"
-                        hasBackdrop="false">
-    <mat-drawer class="ms-sidenav"
-                [mode]="sideNavMode"
-                [opened]="showSideNav$ | async">
+  <mat-sidenav-container class="ms-main__content"
+                         hasBackdrop="false">
+    <mat-sidenav class="ms-sidenav"
+                 [mode]="sideNavMode"
+                 disableClose="true"
+                 autoFocus="false"
+                 [opened]="showSideNav$ | async">
       <app-sidenav></app-sidenav>
-    </mat-drawer>
-    <mat-drawer-content>
-      <!--  <app-spinner *ngIf="loading$ | async"></app-spinner>-->
-<!--      <app-spinner [class.is-open-sidenav]="showSideNav$ | async"></app-spinner>-->
+    </mat-sidenav>
+    <mat-sidenav-content>
       <router-outlet></router-outlet>
-    </mat-drawer-content>
-  </mat-drawer-container>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </main>
 
 

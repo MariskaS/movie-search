@@ -1,17 +1,18 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 
+import {Observable, Subject} from 'rxjs';
+import {SpinnerService} from '../../../shared/services/spinner.service';
 import {ERROR_MESSAGE, MOVIE, MOVIE_LIST_NO_DATA} from '../../../constants';
-import {combineLatest, Observable, Subject} from 'rxjs';
-import {MovieListItem} from '../../../interfaces';
-import {MovieService} from '../../services/movie.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
 import {select, Store} from '@ngrx/store';
 import * as fromRoot from '../../data-flow';
 import {LoadMovieDetail, LoadMovieList} from '../../data-flow/actions/movie.actions';
-import {selectError, selectList, selectLoading} from '../../data-flow/selectors/movie.selector';
-import {filter, map, takeUntil} from 'rxjs/operators';
+import {selectList} from '../../data-flow/selectors/movie.selector';
+import {selectErrorStatus, selectLoadingState} from '../../data-flow/selectors/home-page.selector';
+import {selectDetail} from '../../data-flow/selectors/movie-detail.selector';
+import {filter, takeUntil} from 'rxjs/operators';
+import {MovieListItem} from '../../../interfaces';
 import {MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
-import {selectDetail, selectDetailError, selectDetailLoading} from '../../data-flow/selectors/movie-detail.selector';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialog} from '@angular/material/dialog';
 
 @Component({
@@ -23,20 +24,21 @@ export class HomeComponent implements OnInit, OnDestroy {
   movies$: Observable<MovieListItem[]>;
   title: string = MOVIE.title;
   noMovies: string = MOVIE_LIST_NO_DATA;
-  loading$: Observable<boolean>;
   destroy$ = new Subject<void>();
 
-  constructor(private movieService: MovieService,
-              private snackBar: MatSnackBar,
-              private store: Store<fromRoot.State>,
-              private dialog: MatDialog) {
+  constructor(
+    private store: Store<fromRoot.State>,
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog,
+    private spinnerService: SpinnerService,
+  ) {
   }
 
   ngOnInit(): void {
     this.store.dispatch(LoadMovieList());
 
     this.movies$ = this.store.pipe(select(selectList));
-    this.loading$ = this.getLoadingStream();
+    this.initLoading();
 
     this.initMovieDetail();
     this.initErrorHandling();
@@ -62,23 +64,20 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private initErrorHandling(): void {
-    combineLatest(
-      [
-        this.store.pipe(select(selectError)),
-        this.store.pipe(select(selectDetailError))
-      ]
-    )
-      .pipe(
-        filter(([error, detailError]) => !!error || !!detailError),
-        takeUntil(this.destroy$)
-      )
+    this.store
+      .pipe(select(selectErrorStatus), filter(Boolean), takeUntil(this.destroy$))
       .subscribe(() => this.snackBar.open(ERROR_MESSAGE, 'Close'));
   }
 
-  private getLoadingStream(): Observable<boolean> {
-    return combineLatest([
-      this.store.pipe(select(selectDetailLoading)),
-      this.store.pipe(select(selectLoading))
-    ]).pipe(map(([loadingDetail, loading]) => loadingDetail || loading));
+  private initLoading(): void {
+    this.store
+      .pipe(select(selectLoadingState), takeUntil(this.destroy$))
+      .subscribe((showLoading) => {
+        if (showLoading) {
+          this.spinnerService.show();
+        } else {
+          this.spinnerService.hide();
+        }
+      });
   }
 }

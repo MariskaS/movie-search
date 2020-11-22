@@ -1,19 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MovieListComponent } from './movie-list.component';
+import {MovieListComponent} from './movie-list.component';
 
 describe('MovieListComponent', () => {
   let component: MovieListComponent;
   let fixture: ComponentFixture<MovieListComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ MovieListComponent ]
-    })
-    .compileComponents();
-  }));
-
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [MovieListComponent]
+    });
+
     fixture = TestBed.createComponent(MovieListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -21,5 +18,14 @@ describe('MovieListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit click card event', () => {
+    const expectedId = '1';
+
+    component.clickCard.subscribe((id) => {
+      expect(id).toBe(expectedId);
+    });
+    component.handleClick(expectedId);
   });
 });

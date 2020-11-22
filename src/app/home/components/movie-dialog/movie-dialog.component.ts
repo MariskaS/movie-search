@@ -9,8 +9,6 @@ import {
   MOVIE_DIALOG_LABEL_RUNTIME, MOVIE_DIALOG_LABEL_WRITER, MOVIE_DIALOG_NO_DATA
 } from '../../../constants';
 import {MovieDetail} from '../../../interfaces';
-import {MatIconRegistry} from '@angular/material/icon';
-import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-dialog',
@@ -31,11 +29,7 @@ export class MovieDialogComponent {
   noData = MOVIE_DIALOG_NO_DATA;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: MovieDetail,
-              private dialogRef: MatDialogRef<MovieDetail>,
-              iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon(
-      'close',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/svg/close.svg'));
+              private dialogRef: MatDialogRef<MovieDetail>) {
   }
 
   handleClick(): void {

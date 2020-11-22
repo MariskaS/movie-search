@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {sideNavigationList} from '../../../mockData';
 
 @Component({
@@ -6,12 +6,6 @@ import {sideNavigationList} from '../../../mockData';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent {
   sidenavList: any[] = sideNavigationList;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
