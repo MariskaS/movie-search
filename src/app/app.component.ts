@@ -1,7 +1,11 @@
 import {Component, HostListener, Inject, OnInit} from '@angular/core';
+
 import {select, Store} from '@ngrx/store';
 import * as fromRoot from './data-flow';
 import {Observable} from 'rxjs';
+
+import {MovieService} from './home/services/movie.service';
+
 import {selectSideNavOpen} from './data-flow/selectors/applicationStatus.selector';
 import {CloseSideNav, OpenSideNav} from './data-flow/actions/sidenav.actions';
 import {WINDOW} from './shared/services/window.service';
@@ -17,12 +21,15 @@ export class AppComponent implements OnInit {
   sideNavMode = 'side';
 
   constructor(private store: Store<fromRoot.State>,
+              private movieService: MovieService,
               @Inject(WINDOW) private window: Window) {
   }
 
   ngOnInit(): void {
     this.showSideNav$ = this.store.pipe(select(selectSideNavOpen));
+
     this.previousWidth = this.window.innerWidth;
+
     if (this.previousWidth >= 600) {
       this.store.dispatch(OpenSideNav());
     } else {

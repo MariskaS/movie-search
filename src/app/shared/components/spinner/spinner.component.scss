@@ -1,7 +1,7 @@
 @import "~src/styles/core/variables/variables";
 @import "~src/styles/core/mixins/mixin-flex-variant";
 
-:host {
+.ms-spinner {
   @include flex-variant(flex, center, center);
   background-color: var(--spinner-bg);
   position: fixed;
@@ -10,15 +10,14 @@
   left: 0;
   bottom: 0;
   z-index: $z-index-spinner-overlay;
+
+  &__icon {
+    z-index: $z-index-spinner;
+  }
 }
 
-.ms-spinner {
-  z-index: $z-index-spinner;
-}
-
-/**
-* Global Spinner.
- */
-:host-context(.is-open-sidenav) {
-  padding-left: $sidenav-width;
+:host(.is-sidenav) {
+  .ms-spinner__icon {
+    margin-left: $sidenav-width;
+  }
 }

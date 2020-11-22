@@ -1,3 +1,4 @@
+<app-spinner [class.is-sidenav]="showSideNav$ | async"></app-spinner>
 <app-header></app-header>
 <main class="ms-main">
   <mat-drawer-container class="ms-main__content"
@@ -8,8 +9,6 @@
       <app-sidenav></app-sidenav>
     </mat-drawer>
     <mat-drawer-content>
-      <!--  <app-spinner *ngIf="loading$ | async"></app-spinner>-->
-<!--      <app-spinner [class.is-open-sidenav]="showSideNav$ | async"></app-spinner>-->
       <router-outlet></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>

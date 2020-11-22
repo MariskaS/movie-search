@@ -3,7 +3,6 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ERROR_MESSAGE, MOVIE, MOVIE_LIST_NO_DATA} from '../../../constants';
 import {combineLatest, Observable, Subject} from 'rxjs';
 import {MovieListItem} from '../../../interfaces';
-import {MovieService} from '../../services/movie.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {select, Store} from '@ngrx/store';
 import * as fromRoot from '../../data-flow';
@@ -13,6 +12,7 @@ import {filter, map, takeUntil} from 'rxjs/operators';
 import {MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
 import {selectDetail, selectDetailError, selectDetailLoading} from '../../data-flow/selectors/movie-detail.selector';
 import {MatDialog} from '@angular/material/dialog';
+import {SpinnerService} from '../../../shared/services/spinner.service';
 
 @Component({
   selector: 'app-home',
@@ -26,17 +26,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   loading$: Observable<boolean>;
   destroy$ = new Subject<void>();
 
-  constructor(private movieService: MovieService,
-              private snackBar: MatSnackBar,
-              private store: Store<fromRoot.State>,
-              private dialog: MatDialog) {
+  constructor(
+    private store: Store<fromRoot.State>,
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog,
+    private spinnerService: SpinnerService
+  ) {
   }
 
   ngOnInit(): void {
     this.store.dispatch(LoadMovieList());
 
     this.movies$ = this.store.pipe(select(selectList));
-    this.loading$ = this.getLoadingStream();
+    this.getLoadingStream();
 
     this.initMovieDetail();
     this.initErrorHandling();
@@ -75,10 +77,17 @@ export class HomeComponent implements OnInit, OnDestroy {
       .subscribe(() => this.snackBar.open(ERROR_MESSAGE, 'Close'));
   }
 
-  private getLoadingStream(): Observable<boolean> {
-    return combineLatest([
+  private getLoadingStream(): void {
+    combineLatest([
       this.store.pipe(select(selectDetailLoading)),
       this.store.pipe(select(selectLoading))
-    ]).pipe(map(([loadingDetail, loading]) => loadingDetail || loading));
+    ]).pipe(map(([loadingDetail, loading]) => loadingDetail || loading))
+      .subscribe((showLoading) => {
+        if (showLoading) {
+          this.spinnerService.show();
+        } else {
+          this.spinnerService.hide();
+        }
+      });
   }
 }
