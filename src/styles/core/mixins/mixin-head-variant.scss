@@ -2,6 +2,16 @@
 
 @mixin head-variant($type) {
   text-transform: capitalize;
+  color: var(--head-color);
+
+  small,
+  span {
+    display: block;
+  }
+
+  small {
+    font-size: $font-size-base;
+  }
 
   @if $type == 'h2' {
     font-size: $h2-font-size;
@@ -9,7 +19,6 @@
     padding: $h2-spaces;
 
   } @else if $type == 'h1' {
-    color: var(--h1-color);
     font-size: $h1-font-size;
     font-family: $h1-font-family;
     padding: $h1-spaces;

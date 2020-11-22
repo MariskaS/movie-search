@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 
 import {ERROR_MESSAGE, MOVIE, MOVIE_LIST_NO_DATA} from '../../../constants';
-import {BehaviorSubject, combineLatest, Observable, Subject} from 'rxjs';
+import {combineLatest, Observable, Subject} from 'rxjs';
 import {MovieListItem} from '../../../interfaces';
 import {MovieService} from '../../services/movie.service';
 import {MatSnackBar} from '@angular/material/snack-bar';

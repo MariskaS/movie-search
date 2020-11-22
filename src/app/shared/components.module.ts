@@ -5,17 +5,20 @@ import {CardComponent} from './components/card/card.component';
 import {SidenavComponent} from './components/sidenav/sidenav.component';
 import {MaterialModule} from './material.module';
 import {WINDOW, windowProvider} from './services/window.service';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     CardComponent,
-    SidenavComponent
+    SidenavComponent,
+    SpinnerComponent
   ],
   exports: [
     HeaderComponent,
     CardComponent,
-    SidenavComponent
+    SidenavComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,

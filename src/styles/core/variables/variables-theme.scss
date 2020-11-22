@@ -5,6 +5,11 @@
   --color-primary-dark: #06496b;
 
   /*
+  * Angular Material.
+  */
+  --mat-overlay-bg: rgba(0, 0, 0, 0.32);
+
+  /*
   * Scrollbar.
   */
   --scrollbar-bg: var(--color-primary);
@@ -26,8 +31,7 @@
   /*
   * Headings.
   */
-  --h1-color: var(--color-primary-dark);
-  --h2-color: var(--color-primary-dark);
+  --head-color: var(--color-primary-dark);
 
   /*
   * Card.
@@ -38,11 +42,16 @@
   /*
   * Custom Focus.
   */
-  --focus-box: var(--color-primary-dark);
+  --focus-outline: var(--color-primary);
 
   /*
   * Dialog.
   */
   --dialog-img-bg: var(--color-gray);
+
+  /*
+  * Spinner.
+  */
+  --spinner-bg: var(--mat-overlay-bg)
 }
 

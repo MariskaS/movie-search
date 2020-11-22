@@ -46,5 +46,4 @@ export class AppComponent implements OnInit {
       this.store.dispatch(OpenSideNav());
     }
   }
-
 }
