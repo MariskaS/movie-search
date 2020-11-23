@@ -3,8 +3,8 @@
 ### Description
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
 
-**Technologies:** Angular / Angular Material / RxJs / TypeScript / Scss;   
-**Tools:** Git / GitHub / WebStorml / Postman / Lighthouse;  
+**Technologies:** Angular / Angular Material / NgRx / TypeScript / Scss;   
+**Tools:** Git / GitHub / WebStorm / Postman / Lighthouse;  
 **Tests:** Karma;
 
 ### Package.json scripts
