@@ -43,7 +43,8 @@ export class MovieService {
     return this.httpClient
       .get<OMDBAPISearchResponse>(`${this.host}s=coach${this.apiKey}`)
       .pipe(map((res) => {
-        return res.Search.map(mapMovieItem);
+        const movieListItems = res.Search.map(mapMovieItem);
+        return movieListItems;
       }));
   }
 
