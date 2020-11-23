@@ -20,7 +20,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Package.json scripts
 1. `build` - Run a building script.
 
-1. `start` - Run the **built** application.
+1. `start` - For [heroku](https://www.heroku.com/).
+1. `start:dev` - Run the **built** application.
 
 1. `test` - Run karma test with coverage analytics.
 1. `test:watch` - Run mocha karma runner.
