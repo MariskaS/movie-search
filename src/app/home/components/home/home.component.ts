@@ -2,18 +2,23 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 
 import {Observable, Subject} from 'rxjs';
 import {SpinnerService} from '../../../shared/services/spinner.service';
-import {ERROR_MESSAGE, MOVIE, MOVIE_LIST_NO_DATA} from '../../../constants';
+import {ERROR_MESSAGE, MOVIE, MOVIE_LIST_NO_DATA} from '../../../core/constants';
 import {select, Store} from '@ngrx/store';
-import * as fromRoot from '../../data-flow';
-import {LoadMovieDetail, LoadMovieList} from '../../data-flow/actions/movie.actions';
-import {selectMovieList} from '../../data-flow/selectors/movie.selector';
+
+import {LoadMovieDetail} from '../../data-flow/actions/movie-detail.actions';
+
 import {selectErrorStatus, selectLoadingState} from '../../data-flow/selectors/home-page.selector';
 import {selectDetail} from '../../data-flow/selectors/movie-detail.selector';
 import {filter, takeUntil} from 'rxjs/operators';
-import {MovieListItem} from '../../../interfaces';
+
+import {MovieListItem} from '../../../core/interfaces';
 import {MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
+
 import {MatDialog} from '@angular/material/dialog';
+import {selectMovieList} from '../../../data-flow/selectors/movie-list.selector';
+import {LoadMovieList} from '../../../data-flow/actions/movie.actions';
+import * as fromRoot from '../../../data-flow';
 
 @Component({
   selector: 'app-home',
@@ -35,7 +40,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(LoadMovieList());
+    this.store.dispatch(LoadMovieList({name: ''}));
 
     this.movies$ = this.store.pipe(select(selectMovieList));
     this.initLoading();

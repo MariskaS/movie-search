@@ -32,6 +32,12 @@
       max-width: unset;
     }
 
+    // For Large Desktop.
+    @media (min-width: $screen-lg) {
+      width: calc(100% * 1 / 4);
+      max-width: unset;
+    }
+
     &__title {
       @include head-variant('h2');
 
@@ -54,7 +60,7 @@
       cursor: pointer;
 
       img {
-        transform: scale(1.05);
+        transform: $transform-scale-img;
       }
     }
   }

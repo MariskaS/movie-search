@@ -12,7 +12,8 @@
     </ng-container>
     <ng-container card-body>
       <div class="ms-movie-card__img">
-        <img [src]="movie.imgUrl" alt="Photo of a movie">
+        <img [src]="movie.imgUrl || 'assets/img/noImg.jpg'"
+             alt="Photo of a movie">
       </div>
     </ng-container>
   </app-card>

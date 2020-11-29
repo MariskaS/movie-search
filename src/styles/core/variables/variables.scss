@@ -12,7 +12,7 @@ $font-family-regular: 'Proxima Reg', Arial, sans-serif;
 
 $font-size-lg: 40px;
 $font-size-md: 30px;
-$font-size-sm: 20px;
+$font-size-sm: 18px;
 $font-size-base: 16px;
 
 /*
@@ -31,10 +31,12 @@ $body-font-family: $font-family-regular;
 */
 $screen-sx: 600px;
 $screen-md: 780px;
+$screen-lg: 1200px;
 
 /*
 * Spaces.
 */
+$space-small: 8px;
 $space-base: 20px;
 $space-base-half: $space-base/2;
 
@@ -45,7 +47,6 @@ $header-height: 60px;
 $header-spaces: $space-base-half $space-base;
 
 $header-logo-font-size: $font-size-sm;
-$header-logo-spaces: $space-base-half;
 
 /*
 * SideNav.
@@ -83,9 +84,11 @@ $border-radius-base: 2px;
 $shadow-base: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 1px 0 rgba(0, 0, 0, .14);
 
 /*
-* Transition.
+* Animation.
 */
 $transition-base: .3s ease-in-out;
+$transform-scale-img: scale(1.05);
+$transform-scale-icons: scale(1.3);
 
 /*
 * Card.
@@ -109,6 +112,7 @@ $dialog-img-spaces: (-$mat-dialog-space) (-$mat-dialog-space) $mat-dialog-space;
 $btn-icon-bg: transparent;
 $btn-icon-border: 0;
 $btn-icon-size: 60px;
+$btn-icon-size-sm: 40px;
 
 /*
 * No Data.
@@ -123,3 +127,10 @@ $z-index-spinner-overlay: 10;
 $z-index-spinner: 11;
 $z-index-header: 12;
 
+/*
+* Search.
+*/
+$search-height: $header-height - 20px;
+$search-spaces: 0 $space-small;
+
+$search-input-font-size: $font-size-sm;

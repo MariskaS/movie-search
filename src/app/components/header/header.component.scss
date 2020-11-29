@@ -1,13 +1,13 @@
-@import "~src/styles/core/variables/variables";
-@import "~src/styles/core/mixins/mixin-flex-variant";
-@import "~src/styles/core/mixins/mixin-btn-variant";
+@import "../../../styles/core/variables/variables";
+@import "../../../styles/core/mixins/mixin-flex-variant";
+@import "../../../styles/core/mixins/mixin-btn-variant";
 
 .ms-header {
   height: $header-height;
   padding: $header-spaces;
   background-color: var(--header-bg);
   color: var(--header-color);
-  @include flex-variant(flex, unset, center);
+  @include flex-variant(flex, space-between, center);
   position: relative;
   z-index: $z-index-header;
 
@@ -18,15 +18,12 @@
   &__logo {
     flex: 1;
     text-transform: uppercase;
-    text-align: center;
     font-size: $header-logo-font-size;
-    padding: $header-logo-spaces;
   }
 
   &__btn {
     margin-left: -$space-base;
 
-    @include flex-variant(flex, center, center);
     @include btn-variant(
         $btn-icon-bg,
         $btn-icon-border,
@@ -40,7 +37,6 @@
     & {
       &__logo {
         flex: unset;
-        text-align: left;
       }
 
       &__btn {

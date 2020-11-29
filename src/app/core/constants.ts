@@ -21,3 +21,7 @@ export const MOVIE_DIALOG_NO_DATA = 'N/A';
 export const MOVIE_LIST_NO_DATA = 'There is nothing here yet...';
 
 export const ERROR_MESSAGE = 'Oops, Something Went Wrong';
+
+export const SEARCH_CLOSE_TOOLTIP = 'Clear and Close Search Bar';
+
+export const DEFAULT_SEARCH_MOVIE_NAME = 'coach';

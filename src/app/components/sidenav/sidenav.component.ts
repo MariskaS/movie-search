@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {sideNavigationList} from '../../../mockData';
+import {sideNavigationList} from '../../core/mockData';
 
 @Component({
   selector: 'app-sidenav',

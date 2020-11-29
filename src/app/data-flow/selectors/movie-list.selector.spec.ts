@@ -1,6 +1,12 @@
-import {selectMovieList, selectMovieListError, selectMovieListLoading, selectMovieListState} from './movie.selector';
-import * as fromMovie from '../reducers/movie.reducer';
-import {State} from '../reducers/movie.reducer';
+import {
+  selectMovieList,
+  selectMovieListError,
+  selectMovieListLoading,
+  selectMovieListSearchRequest,
+  selectMovieListState
+} from './movie-list.selector';
+import {State} from '../reducers/movie-list.reducer';
+import {DEFAULT_SEARCH_MOVIE_NAME} from '../../core/constants';
 
 describe('Movie list selectors', () => {
   describe('selectMovieListState', () => {
@@ -8,9 +14,10 @@ describe('Movie list selectors', () => {
       const initialState: State = {
         list: [],
         error: null,
-        loading: false
+        loading: false,
+        name: DEFAULT_SEARCH_MOVIE_NAME
       };
-      expect(selectMovieListState.projector({[fromMovie.MovieKey]: initialState})).toEqual(initialState);
+      expect(selectMovieListState.projector(initialState)).toEqual(initialState);
     });
   });
 
@@ -23,6 +30,12 @@ describe('Movie list selectors', () => {
   describe('selectMovieList', () => {
     it('should return list status', () => {
       expect(selectMovieList.projector({list: []})).toEqual([]);
+    });
+  });
+
+  describe('selectMovieListSearchRequest', () => {
+    it('should return list status', () => {
+      expect(selectMovieListSearchRequest.projector({name: ''})).toEqual('');
     });
   });
 

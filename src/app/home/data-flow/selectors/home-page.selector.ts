@@ -1,6 +1,6 @@
 import {createSelector} from '@ngrx/store';
 import {selectDetailError, selectDetailLoading} from './movie-detail.selector';
-import {selectMovieListError, selectMovieListLoading} from './movie.selector';
+import {selectMovieListError, selectMovieListLoading} from '../../../data-flow/selectors/movie-list.selector';
 
 export const selectLoadingState = createSelector(
   selectDetailLoading,

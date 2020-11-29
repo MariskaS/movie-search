@@ -1,6 +1,5 @@
 <header class="ms-header">
-  <button mat-icon-button
-          class="ms-header__btn"
+  <button class="ms-header__btn"
           aria-label="Toggle left sidebar"
           (click)="handleClick()">
     <mat-icon class="ms-header__icon"
@@ -12,4 +11,8 @@
   </button>
   <a href="/"
      class="ms-header__logo">{{projectName}}</a>
+
+  <form action="">
+    <app-search></app-search>
+  </form>
 </header>

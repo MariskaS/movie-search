@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
-import {MovieListItem} from '../../../interfaces';
+import {MovieListItem} from '../../../core/interfaces';
 
 @Component({
   selector: 'app-movie-list',

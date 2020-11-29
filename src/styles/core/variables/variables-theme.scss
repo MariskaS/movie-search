@@ -1,6 +1,7 @@
 :root {
   --color-white: #fff;
   --color-gray: #f5f5f5;
+  --color-gray-dark: #2222;
   --color-primary: #027796;
   --color-primary-dark: #06496b;
 
@@ -19,6 +20,11 @@
   */
   --header-bg: var(--color-primary);
   --header-color: var(--color-white);
+
+  /*
+  * Body.
+  */
+  --body-color: var(--color-gray-dark);
 
   /*
   * SideNav.
@@ -52,6 +58,16 @@
   /*
   * Spinner.
   */
-  --spinner-bg: var(--mat-overlay-bg)
+  --spinner-bg: var(--mat-overlay-bg);
+
+  /*
+  * Search.
+  */
+  --search-bg: var(--color-primary);
+  --search-color: var(--color-white);
+  --search-border: var(--color-white);
+
+  --search-input-bg: transparent;
+  --search-input-color: var(--color-white);
 }
 

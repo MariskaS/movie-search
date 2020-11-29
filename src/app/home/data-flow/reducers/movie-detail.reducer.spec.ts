@@ -1,6 +1,6 @@
-import {MovieListItem} from '../../../interfaces';
+import {MovieListItem} from '../../../core/interfaces';
 import {reducer} from './movie-detail.reducer';
-import {LoadMovieDetail, LoadMovieDetailFail, LoadMovieDetailSuccess} from '../actions/movie.actions';
+import {LoadMovieDetail, LoadMovieDetailFail, LoadMovieDetailSuccess} from '../actions/movie-detail.actions';
 
 describe('Reducer: movieDetailReducer', () => {
   it('should have loading set to true', () => {

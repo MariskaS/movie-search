@@ -1,11 +1,13 @@
 import {Action, createReducer, on} from '@ngrx/store';
-import {MovieListItem} from '../../../interfaces';
 import {LoadMovieList, LoadMovieListFail, LoadMovieListSuccess} from '../actions/movie.actions';
+import {MovieListItem} from '../../core/interfaces';
+import {DEFAULT_SEARCH_MOVIE_NAME} from '../../core/constants';
 
 export interface State {
   list: MovieListItem[];
   error: any;
   loading: boolean;
+  name: string;
 }
 
 export const MovieKey = 'movie';
@@ -13,14 +15,16 @@ export const MovieKey = 'movie';
 const initialState: State = {
   list: [],
   error: null,
-  loading: false
+  loading: false,
+  name: DEFAULT_SEARCH_MOVIE_NAME
 };
 
-const movieReducer = createReducer(
+const movieListReducer = createReducer(
   initialState,
-  on(LoadMovieList, (state) => ({
+  on(LoadMovieList, (state, {name}) => ({
     ...state,
-    loading: true
+    loading: true,
+    name
   })),
   on(LoadMovieListSuccess, (state, {list}) => ({
     ...state,
@@ -37,5 +41,5 @@ const movieReducer = createReducer(
 );
 
 export function reducer(state: State, action: Action): any {
-  return movieReducer(state, action);
+  return movieListReducer(state, action);
 }

@@ -18,5 +18,8 @@ export class IconRegistryService {
     this.iconRegistry.addSvgIcon(
       'menu',
       this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/menu.svg'));
+    this.iconRegistry.addSvgIcon(
+      'search',
+      this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/search.svg'));
   }
 }

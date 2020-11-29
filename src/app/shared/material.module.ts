@@ -13,7 +13,7 @@ const modules = [
   MatIconModule,
   MatProgressSpinnerModule,
   MatTooltipModule,
-  MatSnackBarModule
+  MatSnackBarModule,
 ];
 
 @NgModule({

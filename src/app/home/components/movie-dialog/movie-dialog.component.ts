@@ -7,8 +7,8 @@ import {
   MOVIE_DIALOG_LABEL_RATED,
   MOVIE_DIALOG_LABEL_RELEASED,
   MOVIE_DIALOG_LABEL_RUNTIME, MOVIE_DIALOG_LABEL_WRITER, MOVIE_DIALOG_NO_DATA
-} from '../../../constants';
-import {MovieDetail} from '../../../interfaces';
+} from '../../../core/constants';
+import {MovieDetail} from '../../../core/interfaces';
 
 @Component({
   selector: 'app-movie-dialog',
@@ -27,6 +27,10 @@ export class MovieDialogComponent {
   labelLanguage = MOVIE_DIALOG_LABEL_LANGUAGE;
   labelCountry = MOVIE_DIALOG_LABEL_COUNTRY;
   noData = MOVIE_DIALOG_NO_DATA;
+
+  get imageStyle(): string {
+    return `background-image:url(${this.data.imgUrl || 'assets/img/noImg.jpg'})`;
+  }
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: MovieDetail,
               private dialogRef: MatDialogRef<MovieDetail>) {

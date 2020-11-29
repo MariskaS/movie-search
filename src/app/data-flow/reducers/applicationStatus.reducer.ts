@@ -1,14 +1,17 @@
 import {Action, createReducer, on} from '@ngrx/store';
 import {CloseSideNav, OpenSideNav, ToggleSideNav} from '../actions/sidenav.actions';
+import {CloseSearchBar, ShowSearchBar} from '../actions/searchBar.actions';
 
 export interface State {
   showSideNav: boolean;
+  showSearchBox: boolean;
 }
 
 export const ApplicationStatusKey = 'status';
 
 const initialState: State = {
-  showSideNav: false
+  showSideNav: false,
+  showSearchBox: false,
 };
 
 const applicationStatusReducer = createReducer(
@@ -24,6 +27,14 @@ const applicationStatusReducer = createReducer(
   on(CloseSideNav, (state) => ({
     ...state,
     showSideNav: false
+  })),
+  on(ShowSearchBar, (state) => ({
+    ...state,
+    showSearchBox: true,
+  })),
+  on(CloseSearchBar, (state) => ({
+    ...state,
+    showSearchBox: false,
   }))
 );
 

@@ -1,0 +1,30 @@
+<div class="ms-search"
+     [class.is-open]="showSearchBar$ | async"
+     aria-label="Search box">
+  <div class="ms-search__form"
+       cdkTrapFocus
+       cdkTrapFocusAutoCapture
+       *ngIf="showSearchBar$ | async">
+    <mat-icon aria-hidden="true"
+              svgIcon="search"></mat-icon>
+    <input type="text"
+           [ngModel]="movieName"
+           #searchInput
+           (ngModelChange)="movieNameChange($event)"
+           class="ms-search__input" />
+    <button aria-label="Clear and Close Search Bar"
+            [matTooltip]="closeTooltip"
+            (click)="closeSearchBar()"
+            class="ms-search__clear">
+      <mat-icon aria-hidden="true"
+                svgIcon="close"></mat-icon>
+    </button>
+  </div>
+  <button aria-label="Search button"
+          *ngIf="!(showSearchBar$ | async)"
+          (click)="showSearchBar()"
+          class="ms-search__btn">
+    <mat-icon aria-hidden="true"
+              svgIcon="search"></mat-icon>
+  </button>
+</div>

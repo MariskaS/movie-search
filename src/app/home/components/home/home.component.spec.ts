@@ -2,18 +2,17 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {HomeComponent} from './home.component';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
-import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatDialog} from '@angular/material/dialog';
 import {SpinnerService} from '../../../shared/services/spinner.service';
-import {selectMovieList} from '../../data-flow/selectors/movie.selector';
+import {selectMovieList} from '../../../data-flow/selectors/movie-list.selector';
 import {selectDetail} from '../../data-flow/selectors/movie-detail.selector';
 import {selectErrorStatus, selectLoadingState} from '../../data-flow/selectors/home-page.selector';
 import {Store} from '@ngrx/store';
-import {LoadMovieDetail, LoadMovieList} from '../../data-flow/actions/movie.actions';
+import {LoadMovieDetail} from '../../data-flow/actions/movie-detail.actions';
 import * as fromRoot from '../../data-flow';
-import {MovieDetail} from '../../../interfaces';
+import {MovieDetail} from '../../../core/interfaces';
 import {MovieDialogComponent} from '../movie-dialog/movie-dialog.component';
-import {OpenSideNav} from '../../../data-flow/actions/sidenav.actions';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;

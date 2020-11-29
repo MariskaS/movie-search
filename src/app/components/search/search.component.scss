@@ -1,0 +1,65 @@
+@import "../../../styles/core/variables/variables";
+@import "../../../styles/core/mixins/mixin-flex-variant";
+@import "../../../styles/core/mixins/mixin-btn-variant";
+
+.ms-search {
+  color: var(--search-color);
+  border: 1px solid var(--search-border);
+  background-color: var(--search-bg);
+  @include flex-variant(flex, center, center);
+
+  &__form {
+    width: 100%;
+    padding: $search-spaces;
+    @include flex-variant(flex, center, center);
+  }
+
+  &__input {
+    flex: 1;
+    padding: $search-spaces;
+    height: $search-height;
+    font-size: $search-input-font-size;
+    border: 0;
+    background-color: var(--search-input-bg);
+    color: var(--search-input-color);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__clear,
+  &__btn {
+    color: var(--search-color);
+    @include btn-variant(
+        $btn-icon-bg,
+        $btn-icon-border,
+        $btn-icon-size-sm,
+        $btn-icon-size-sm
+    )
+  }
+
+  &__clear {
+    transition: transform $transition-base;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      transform: $transform-scale-icons;
+    }
+  }
+
+  // For Mobile.
+  @media (max-width: $screen-sx) {
+    & {
+      position: absolute;
+      top: $space-base-half;
+      right: $space-base-half;
+
+      &.is-open {
+        left: $space-base-half;
+      }
+    }
+  }
+
+}

@@ -25,7 +25,7 @@ describe('MovieService', () => {
   });
 
   it('should get movie list mapped', () => {
-    service.getCoachMovieList().subscribe((list) => {
+    service.getMovieList('coach').subscribe((list) => {
       expect(list.length).toBe(mockOMDBAPISearchResponse.Search.length);
     });
     httpTestingController.expectOne({method: 'GET'}).flush(mockOMDBAPISearchResponse);

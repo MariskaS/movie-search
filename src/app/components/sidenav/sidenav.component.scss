@@ -1,5 +1,5 @@
-@import "~src/styles/core/variables/variables";
-@import "~src/styles/core/mixins/mixin-flex-variant";
+@import "../../../styles/core/variables/variables";
+@import "../../../styles/core/mixins/mixin-flex-variant";
 
 .ms-sidenav__item {
   min-height: $sidenav-item-height;

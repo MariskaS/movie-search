@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {PROJECT} from '../../../constants';
+import {PROJECT} from '../../core/constants';
 import {Store} from '@ngrx/store';
-import * as fromRoot from '../../../data-flow';
-import {ToggleSideNav} from '../../../data-flow/actions/sidenav.actions';
+import * as fromRoot from '../../data-flow';
+import {ToggleSideNav} from '../../data-flow/actions/sidenav.actions';
 
 @Component({
   selector: 'app-header',

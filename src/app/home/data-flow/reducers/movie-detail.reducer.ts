@@ -1,10 +1,10 @@
 import {Action, createReducer, on} from '@ngrx/store';
-import {MovieDetail} from '../../../interfaces';
+import {MovieDetail} from '../../../core/interfaces';
 import {
   LoadMovieDetail,
   LoadMovieDetailFail,
   LoadMovieDetailSuccess,
-} from '../actions/movie.actions';
+} from '../actions/movie-detail.actions';
 
 export interface State {
   detail: MovieDetail;

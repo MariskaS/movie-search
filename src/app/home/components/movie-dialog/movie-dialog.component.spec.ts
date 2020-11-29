@@ -3,7 +3,7 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {MovieDialogComponent} from './movie-dialog.component';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {mockOMDBAPIMovieDetailsResponseMapped} from '../../../../tests/stubs/mockData';
-import {MovieDetail} from '../../../interfaces';
+import {MovieDetail} from '../../../core/interfaces';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('MovieDialogComponent', () => {
