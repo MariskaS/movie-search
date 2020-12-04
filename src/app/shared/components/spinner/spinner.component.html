@@ -1,5 +1,7 @@
 <div class="ms-spinner"
-     *ngIf="showSpinner">
+     *ngIf="showSpinner"
+     cdkTrapFocus
+     cdkTrapFocusAutoCapture>
   <mat-spinner class="ms-spinner__icon"
                strokeWidth="6"></mat-spinner>
 </div>

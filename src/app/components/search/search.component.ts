@@ -8,6 +8,7 @@ import {SEARCH_CLOSE_TOOLTIP} from '../../core/constants';
 import {LoadMovieList} from '../../data-flow/actions/movie.actions';
 import {selectMovieListSearchRequest} from '../../data-flow/selectors/movie-list.selector';
 import {takeUntil} from 'rxjs/operators';
+import {HelpService} from '../../core/services/help.service';
 
 @Component({
   selector: 'app-search',
@@ -21,7 +22,13 @@ export class SearchComponent implements OnInit, OnDestroy {
   movieName: string;
   destroy$ = new Subject<void>();
 
-  constructor(private store: Store<fromRoot.State>) {
+  private debounceLoadMovieList = this.helpService.debounce(($event) => {
+    this.movieName = $event;
+    this.store.dispatch(LoadMovieList({name: this.movieName}));
+  }, 300);
+
+  constructor(private store: Store<fromRoot.State>,
+              private helpService: HelpService) {
   }
 
   ngOnDestroy(): void {
@@ -30,7 +37,9 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.showSearchBar$ = this.store.pipe(select(selectSearchBarOpen));
-    this.store.pipe(select(selectMovieListSearchRequest), takeUntil(this.destroy$)).subscribe((name) => {
+    this.store.pipe(
+      select(selectMovieListSearchRequest),
+      takeUntil(this.destroy$)).subscribe((name) => {
       this.movieName = name;
     });
   }
@@ -49,8 +58,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   movieNameChange($event: string): void {
     if ($event.length >= 3) {
-      this.movieName = $event;
-      this.store.dispatch(LoadMovieList({name: this.movieName}));
+      this.debounceLoadMovieList($event);
     }
   }
 }
